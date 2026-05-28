@@ -18,7 +18,7 @@
       <meta property="og:description" content="Modern eCommerce product showcase with premium fashion collections">
          <meta property="og:image" content="images/slider-bg.jpg">
        <meta property="og:type" content="website">
-      <meta property="og:url" content="https://yourdomain.com">
+      <meta property="og:url" content="">
      
      <link rel="canonical" href="https://yourdomain.com/index.html">
       <link rel="shortcut icon" href="images/favicon.png" type="">
@@ -32,7 +32,6 @@
       <link href="css/responsive.css" rel="stylesheet" />
    </head>
    <body>
-         <header class="hero_area">
          <!-- header section strats -->
          <header class="header_section">
             <div class="container">
@@ -46,86 +45,28 @@
                         <li class="nav-item active">
                            <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                         </li>
-                       <li class="nav-item dropdown">
-                           <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true"> <span class="nav-label">Pages <span class="caret"></span></a>
-                           <ul class="dropdown-menu">
-                              <li><a href="about.html">About</a></li>
-                              <li><a href="testimonial.html">Testimonial</a></li>
-                           </ul>
+                   <li class="nav-item">
+                           <a class="nav-link" href="about.html">About</a>
                         </li>
+
                         <li class="nav-item">
                            <a class="nav-link" href="product.html">Products</a>
                         </li>
                         <li class="nav-item">
-                           <a class="nav-link" href="blog_list.html">Blog</a>
-                        </li>
-                        <li class="nav-item">
                            <a class="nav-link" href="contact.html">Contact</a>
                         </li>
-                        <li class="nav-item">
-                           <a class="nav-link" href="#">
-                              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;" xml:space="preserve">
-                                 <g>
-                                    <g>
-                                       <path d="M345.6,338.862c-29.184,0-53.248,23.552-53.248,53.248c0,29.184,23.552,53.248,53.248,53.248
-                                          c29.184,0,53.248-23.552,53.248-53.248C398.336,362.926,374.784,338.862,345.6,338.862z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                    <g>
-                                       <path d="M439.296,84.91c-1.024,0-2.56-0.512-4.096-0.512H112.64l-5.12-34.304C104.448,27.566,84.992,10.67,61.952,10.67H20.48
-                                          C9.216,10.67,0,19.886,0,31.15c0,11.264,9.216,20.48,20.48,20.48h41.472c2.56,0,4.608,2.048,5.12,4.608l31.744,216.064
-                                          c4.096,27.136,27.648,47.616,55.296,47.616h212.992c26.624,0,49.664-18.944,55.296-45.056l33.28-166.4
-                                          C457.728,97.71,450.56,86.958,439.296,84.91z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                    <g>
-                                       <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
-                                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
-                                    </g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                                 <g>
-                                 </g>
-                              </svg>
-                           </a>
-                        </li>
-                        <form class="form-inline">
-                           <button class="btn nav_search-btn" type="submit" aria-label="Search">
-                           <i class="fa fa-search" aria-hidden="true"></i>
-                           </button>
-                        </form>
+                        
+
+<a href="#" onclick="toggleCart()" class="nav-link">
+  <i class="fa fa-shopping-cart"></i>
+  <span id="cart-count">0</span>
+</a>
+                        
                         <button onclick="toggleDarkMode()" aria-label="Toggle dark mode">
-🌙
-</button>
+                                 🌙</button>
+                        </li>
+                       
+                         
                      </ul>
                   </div>
                </nav>
@@ -133,6 +74,23 @@
          </header>
          <!-- end header section -->
          <!-- slider section -->
+                <div id="overlay" onclick="toggleCart()"></div>
+
+<div id="cartBox">
+  <h4>Your Cart</h4>
+  <hr>
+
+  <div id="cartItems"></div>
+
+  <hr>
+
+  <h5>Total: ₹<span id="total">0</span></h5>
+
+  <button onclick="checkout()" class="btn btn-success w-100">
+    Checkout
+  </button>
+</div>
+
          <section class="slider_section ">
             <div class="slider_bg_box">
                <img src="images/slider-bg.jpg" alt="">
@@ -152,8 +110,8 @@
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
+Enjoy exclusive discounts on our entire collection for a limited time. Discover premium quality products at unbeatable prices and upgrade your style today.
+</p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
                                     Shop Now
@@ -177,8 +135,8 @@
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
+Shop the latest trends with special seasonal offers designed just for you. Fresh styles, premium quality, and great savings all in one place.
+</p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
                                     Shop Now
@@ -202,8 +160,8 @@
                                     On Everything
                                  </h1>
                                  <p>
-                                    Explicabo esse amet tempora quibusdam laudantium, laborum eaque magnam fugiat hic? Esse dicta aliquid error repudiandae earum suscipit fugiat molestias, veniam, vel architecto veritatis delectus repellat modi impedit sequi.
-                                 </p>
+Don’t miss out on our biggest sale event of the year. Grab your favorite items now before the deals end and stock runs out.
+</p>
                                  <div class="btn-box">
                                     <a href="" class="btn1">
                                     Shop Now
@@ -328,9 +286,9 @@
                         <h5>
                            Fast Delivery
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                       <p>
+Get your orders delivered quickly and safely to your doorstep with our reliable and fast shipping service.
+</p>
                      </div>
                   </div>
                </div>
@@ -443,9 +401,9 @@
                         <h5>
                            Free Shiping
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                       <p>
+Enjoy free shipping on all orders with no hidden charges. Shop more and save more on every purchase.
+</p>
                      </div>
                   </div>
                </div>
@@ -464,9 +422,11 @@
                         <h5>
                            Best Quality
                         </h5>
-                        <p>
-                           variations of passages of Lorem Ipsum available
-                        </p>
+                        
+                        
+                     <p>
+We ensure premium quality products that are carefully checked to give you the best shopping experience.
+</p>
                      </div>
                   </div>
                </div>
@@ -476,348 +436,84 @@
       <!-- end why section -->
       
       <!-- arrival section -->
-      <section class="arrival_section">
-         <div class="container">
-            <div class="box">
-               <div class="arrival_bg_box">
-                  <img src="images/arrival-bg.png" alt="">
-               </div>
-               <div class="row">
-                  <div class="col-md-6 ml-auto">
-                     <div class="heading_container remove_line_bt">
-                        <h2>
-                           #NewArrivals
-                        </h2>
-                     </div>
-                     <p style="margin-top: 20px;margin-bottom: 30px;">
-                        Vitae fugiat laboriosam officia perferendis provident aliquid voluptatibus dolorem, fugit ullam sit earum id eaque nisi hic? Tenetur commodi, nisi rem vel, ea eaque ab ipsa, autem similique ex unde!
-                     </p>
-                     <a href="">
-                     Shop Now
-                     </a>
-                  </div>
+      <!-- New Arrival Section -->
+<section class="new_arrival_section">
+   <div class="container">
+      <div class="arrival_box">
+
+         <div class="arrival_content">
+            <span>Trending Collection</span>
+
+            <h2>Fresh New Arrivals</h2>
+
+            <p>
+               Upgrade your wardrobe with our newest premium fashion styles.
+               Modern designs, comfortable fits, and trending collections
+               made for every season.
+            </p>
+
+            <a href="product.html" class="arrival_btn">
+               Explore Collection
+            </a>
+         </div>
+
+      </div>
+   </div>
+</section>
+<!-- Category Section -->
+<!-- Category Section -->
+<section class="category_section layout_padding">
+   <div class="container">
+
+      <div class="heading_container heading_center">
+         <h2>Shop By Category</h2>
+         <p>
+            Discover premium fashion collections designed for every style.
+         </p>
+      </div>
+
+      <div class="row">
+
+         <!-- Men Wear -->
+         <div class="col-md-4">
+            <div class="category_box">
+               <img src="https://plus.unsplash.com/premium_photo-1669688174622-0393f5c6baa2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8bWVuJTIwc3R5bGV8ZW58MHx8MHx8fDA%3D" alt="Men Wear">
+
+               <div class="category_content">
+                  <h3>Men Wear</h3>
+                  <a href="product.html">Explore</a>
                </div>
             </div>
          </div>
-      </section>
-      <!-- end arrival section -->
+
+         <!-- Women Wear -->
+         <div class="col-md-4">
+            <div class="category_box">
+               <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop" alt="Women Wear">
+
+               <div class="category_content">
+                  <h3>Women Wear</h3>
+                  <a href="product.html">Explore</a>
+               </div>
+            </div>
+         </div>
+
+         <!-- Premium Style -->
+         <div class="col-md-4">
+            <div class="category_box">
+               <img src="https://images.unsplash.com/photo-1704926273322-86addc31fbf2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHdvbWVuJTIwc3R5bGV8ZW58MHx8MHx8fDA%3D" alt="Premium Style">
+
+               <div class="category_content">
+                  <h3>Premium Style</h3>
+                  <a href="product.html">Explore</a>
+               </div>
+            </div>
+         </div>
+
+      </div>
+   </div>
+</section>      <!-- end arrival section -->
       
-      <!-- product section -->
-       <section class="product_section layout_padding" aria-labelledby="products-heading">
-         <div class="container">
-            <div class="heading_container heading_center">
-              <h2 id="products-heading" class="sr-only">Products Section</h2>
-            </div>
-            <div class="row">
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Men's Shirt
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p1.png" alt="men's casual" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $75
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p2.png" alt="men's t-shirt" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $80
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p3.png" alt="women's dress" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $68
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p4.png" alt="women's dress" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $70
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p5.png" alt="wome's dress" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $75
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p6.png" alt="women's dress" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $58
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p7.png" alt="women's shorts" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $80
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p8.png" alt="men's wear" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p9.png" alt="" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p10.png" alt="men's casual wear" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p11.png" alt="men's shirt" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Men's Shirt
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-sm-6 col-md-4 col-lg-4">
-                  <div class="box">
-                     <div class="option_container">
-                        <div class="options">
-                           <a href="" class="option1">
-                           Add To Cart
-                           </a>
-                           <a href="" class="option2">
-                           Buy Now
-                           </a>
-                        </div>
-                     </div>
-                     <div class="img-box">
-                        <img src="images/p12.png" alt="women's wear" loading="lazy">
-                     </div>
-                     <div class="detail-box">
-                        <h5>
-                           Women's Dress
-                        </h5>
-                        <h6>
-                           $65
-                        </h6>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="btn-box">
-               <a href="">
-               View All products
-               </a>
-            </div>
-         </div>
-      </section>
-      <!-- end product section -->
 
       <!-- subscribe section -->
       <section class="subscribe_section">
@@ -829,7 +525,9 @@
                         <div class="heading_container heading_center">
                            <h3>Subscribe To Get Discount Offers</h3>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor</p>
+<p>
+Subscribe now and be the first to receive exclusive deals, special discounts, and latest product updates straight to your inbox.
+</p>
                         <form action="">
                            <label for="email" class="sr-only">Email address</label>
                      <input id="email" type="email" placeholder="Enter your email" required>
@@ -859,20 +557,21 @@
                         <div class="img_container">
                            <div class="img-box">
                               <div class="img_box-inner">
-                                 <img src="images/client.jpg" alt="client review">
+                                 <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fGdpcmx8ZW58MHx8MHx8fDA%3D" alt="client review">
                               </div>
                            </div>
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Madhuri deeksha
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                           </p>
+I had an amazing shopping experience. The product quality is excellent and delivery was super fast. Highly recommended!
+</p>
+                           
                         </div>
                      </div>
                   </div>
@@ -881,20 +580,21 @@
                         <div class="img_container">
                            <div class="img-box">
                               <div class="img_box-inner">
-                                 <img src="images/client.jpg" alt="client review">
+                                 <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D" alt="client review">
                               </div>
                            </div>
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Shruthi Reddy
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                           </p>
+Great service and smooth ordering process. Everything arrived on time and exactly as described. Very satisfied!
+</p>
+                           
                         </div>
                      </div>
                   </div>
@@ -903,20 +603,21 @@
                         <div class="img_container">
                            <div class="img-box">
                               <div class="img_box-inner">
-                                 <img src="images/client.jpg" alt="">
+                                 <img src="https://images.unsplash.com/photo-1609505848912-b7c3b8b4beda?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8Z2lybHxlbnwwfHwwfHx8MA%3D%3D" alt="">
                               </div>
                            </div>
                         </div>
                         <div class="detail-box">
                            <h5>
-                              Anna Trevor
+                              Swapnika Rao
                            </h5>
                            <h6>
                               Customer
                            </h6>
                            <p>
-                              Dignissimos reprehenderit repellendus nobis error quibusdam? Atque animi sint unde quis reprehenderit, et, perspiciatis, debitis totam est deserunt eius officiis ipsum ducimus ad labore modi voluptatibus accusantium sapiente nam! Quaerat.
-                           </p>
+Good quality products at affordable prices. Customer support was helpful and responsive throughout my order.
+</p>
+                          
                         </div>
                      </div>
                   </div>
@@ -936,81 +637,85 @@
       </section>
       <!-- end client section -->
       <!-- footer start -->
-      <footer>
-         <div class="container">
-            <div class="row">
-               <div class="col-md-4">
-                   <div class="full">
-                      <div class="logo_footer">
-                        <a href="#"><img width="210" src="images/logo.png" alt="#" /></a>
-                      </div>
-                      <div class="information_f">
-                        <p><strong>ADDRESS:</strong> 28 White tower, Street Name New York City, USA</p>
-                        <p><strong>TELEPHONE:</strong> +91 987 654 3210</p>
-                        <p><strong>EMAIL:</strong> yourmain@gmail.com</p>
-                      </div>
-                   </div>
-               </div>
-               <div class="col-md-8">
-                  <div class="row">
-                  <div class="col-md-7">
-                     <div class="row">
-                        <div class="col-md-6">
-                     <div class="widget_menu">
-                        <h3>Menu</h3>
-                        <ul>
-                           <li><a href="#">Home</a></li>
-                           <li><a href="#">About</a></li>
-                           <li><a href="#">Services</a></li>
-                           <li><a href="#">Testimonial</a></li>
-                           <li><a href="#">Blog</a></li>
-                           <li><a href="#">Contact</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                  <div class="col-md-6">
-                     <div class="widget_menu">
-                        <h3>Account</h3>
-                        <ul>
-                           <li><a href="#">Account</a></li>
-                           <li><a href="#">Checkout</a></li>
-                           <li><a href="#">Login</a></li>
-                           <li><a href="#">Register</a></li>
-                           <li><a href="#">Shopping</a></li>
-                           <li><a href="#">Widget</a></li>
-                        </ul>
-                     </div>
-                  </div>
-                     </div>
-                  </div>     
-                  <div class="col-md-5">
-                     <div class="widget_menu">
-                        <h3>Newsletter</h3>
-                        <div class="information_f">
-                          <p>Subscribe by our newsletter and get update protidin.</p>
-                        </div>
-                        <div class="form_sub">
-                           <form>
-                              <fieldset>
-                                 <div class="field">
-                                    <input type="email" placeholder="Enter Your Mail" name="email" />
-                                    <input type="submit" value="Subscribe" />
-                                 </div>
-                              </fieldset>
-                           </form>
-                        </div>
-                     </div>
-                  </div>
-                  </div>
+<footer class="footer_section">
+   <div class="container">
+      <div class="row">
+
+         <!-- Brand -->
+         <div class="col-md-4 footer-col">
+            <div class="footer_detail">
+               <a href="index.html" class="footer-logo">
+                  Truerize IQ
+               </a>
+
+               <p>
+                  Truerize IQ is a modern eCommerce fashion store offering premium clothing,
+                  accessories, and trending styles with fast delivery and secure checkout.
+               </p>
+
+               <div class="footer_social">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
                </div>
             </div>
          </div>
-      </footer>
+
+         <!-- Quick Links -->
+         <div class="col-md-4 footer-col">
+            <div class="footer_links">
+               <h4>Quick Links</h4>
+               <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="product.html">Products</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               </ul>
+            </div>
+         </div>
+
+         <!-- Contact + Map -->
+         <div class="col-md-4 footer-col">
+            <div class="footer_contact">
+               <h4>Contact Info</h4>
+
+               <div class="contact_link_box">
+                  <a href="#">
+                     <i class="fa fa-map-marker"></i>
+                     <span>Sarojini Devi, Andhra Pradesh, India</span>
+                  </a>
+
+                  <a href="#">
+                     <i class="fa fa-phone"></i>
+                     <span>+91 98765 43210</span>
+                  </a>
+
+                  <a href="#">
+                     <i class="fa fa-envelope"></i>
+                     <span>support@truerizeiq.com</span>
+                  </a>
+               </div>
+            </div>
+
+           
+         </div>
+
+      </div>
+
+      <!-- copyright -->
+      <div class="footer-info">
+         <p>
+            &copy; <span id="displayYear"></span> Truerize IQ. All Rights Reserved.
+         </p>
+      </div>
+
+   </div>
+</footer>
       <!-- footer end -->
       <div class="cpy_">
-         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">Free Html Templates</a><br>
+         <p class="mx-auto">© 2021 All Rights Reserved By <a href="https://html.design/">TRUERIZE IQ STRATEGIC SOLUTIONS</a><br>
          
-            Distributed By <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
          
          </p>
       </div>
