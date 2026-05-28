@@ -1459,6 +1459,7 @@ body.dark-mode #cartBox {
     background: #1e1e1e;
     color: #fff;
 }
+
 /* =====================
    DARK MODE NAVBAR FIX
 ===================== */
@@ -1521,9 +1522,9 @@ body.dark-mode .nav-link .fa-shopping-cart {
 }
 /* FORCE FULL WIDTH SECTION */
 .offer-section {
-  width: 100vw;              /* full screen width */
-  margin-left: calc(-50vw + 50%); /* breaks container restriction */
-  background: #0f0f0f;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  background: #cbdddd;   /* changed to pure black */
   padding: 60px 20px;
   box-sizing: border-box;
   display: flex;
