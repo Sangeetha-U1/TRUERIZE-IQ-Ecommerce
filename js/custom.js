@@ -4,8 +4,14 @@
 if (localStorage.getItem("loggedIn") !== "true") {
     window.location.href = "login.html";
 }
-function logout(){
+
+function logout() {
     localStorage.removeItem("loggedIn");
+    localStorage.removeItem("currentUser");
+
+    // optional: clear cart too (recommended)
+    localStorage.removeItem("cart");
+
     window.location.href = "login.html";
 }
 // =====================
