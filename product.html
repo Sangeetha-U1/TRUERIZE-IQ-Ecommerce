@@ -65,7 +65,9 @@
                         
                         <button onclick="toggleDarkMode()" aria-label="Toggle dark mode">
                                  🌙</button>
-                     </ul>
+                     <button onclick="logout()">Logout</button>
+                              </ul>
+
                   </div>
                </nav>
             </div>
@@ -606,6 +608,9 @@
          window.addEventListener("storage", function () {
   updateCartCount();
 });
+if (localStorage.getItem("loggedIn") !== "true") {
+    window.location.href = "login.html";
+}
       </script>
       <script src="js/jquery-3.4.1.min.js"></script>
       <!-- popper js -->
